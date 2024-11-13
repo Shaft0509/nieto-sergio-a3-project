@@ -37,6 +37,42 @@ namespace Game10003
 
             Window.ClearBackground(Color.White);
 
+            // Update character logic and handle input
+            character.Update();
+
+            // Move the pipe and apply gravity to the character
+            pipe.Move(pipeSpeed);
+
+            // Check for collisions 
+            if (CheckCollision())
+            {
+                gameOver = true; // Set gameOver true if collision happens
+            }
+
+            // Draw the game objects
+            DrawGameObjects();
+            score.Draw(); // Draw the score using the Score class
+        }
+
+        private bool CheckCollision()
+        {
+            // Check if the character is out of the window 
+            if (character.Y > 400 || character.Y < 0) // If character is out of bounds
+            {
+                return true;
+            }
+
+            // Check if the character hits the pipe
+            if (character.X + character.Radius > pipe.X && character.X - character.Radius < pipe.X + pipe.Width &&
+                (character.Y - character.Radius < pipe.Height || character.Y + character.Radius > pipe.Height + pipe.Gap))
+            {
+                return true; // Collision with pipe
+            }
+
+            return false;
+        }
+
+
 
 
 

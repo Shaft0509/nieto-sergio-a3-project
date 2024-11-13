@@ -13,3 +13,33 @@ namespace Game10003
         private bool isJumping = false; //  check if the character has jumped yet
         private bool gameStarted = false; //  track if the game has started
 
+        public Character(int startY)
+        {
+            Y = startY; // Initial Y position for the character
+        }
+
+        public void ApplyGravity()
+        {
+            if (gameStarted) // Apply gravity only if the game has started
+            {
+                velocity += gravity; // Apply gravity
+                Y += velocity; // character (ball) movement
+            }
+        }
+
+        public void Jump()
+        {
+            if (gameStarted) // allow jumping if the game has started
+
+            {
+                velocity = jumpStrength; // Set velocity to jump strength
+            }
+        }
+
+        public void StartGame()
+        {
+            if (!gameStarted) // Start game only once
+            {
+                gameStarted = true; //  the game Has started
+            }
+        }

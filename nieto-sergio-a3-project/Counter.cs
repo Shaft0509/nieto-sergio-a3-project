@@ -1,5 +1,4 @@
-﻿using System.Numerics;
-
+﻿
 namespace Game10003
 {
     public class Score
@@ -21,9 +20,9 @@ namespace Game10003
         //  draw the score on the screen at the top center
         public void Draw()
         {
-            
+
             Text.Draw("Score:", 350, 50);
-           
+
         }
     }
 }

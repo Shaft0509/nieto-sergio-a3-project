@@ -24,4 +24,22 @@ namespace Game10003
             score = new Score();
         }
 
+        public void Update()
+        {
+            // If the game is over, display the "Game Over!" message and stop further updates
+            if (gameOver)
+            {
+                Window.ClearBackground(Color.White);
+                DrawGameOverMessage();
+                return;
+            }
+
+
+            Window.ClearBackground(Color.White);
+
+
+
+
+
+
 

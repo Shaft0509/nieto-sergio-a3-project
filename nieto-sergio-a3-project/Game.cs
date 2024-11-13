@@ -71,6 +71,29 @@ namespace Game10003
 
             return false;
         }
+        private void DrawGameObjects()
+        {
+            // Draw the character as a circle
+            Draw.FillColor = Color.Yellow;
+            Draw.Circle(character.X, character.Y, character.Radius);
+
+            // Draw the pipes
+            Draw.FillColor = Color.Green;
+            Draw.Rectangle(pipe.X, 0, pipe.Width, pipe.Height); // Top part of the pipe
+            Draw.Rectangle(pipe.X, pipe.Height + pipe.Gap, pipe.Width, 400 - (pipe.Height + pipe.Gap)); // Bottom part of the pipe
+        }
+
+        private void DrawGameOverMessage()
+
+        {
+            Text.Draw("Game Over!", 300, 200);
+        }
+
+
+
+    }
+}
+
 
 
 

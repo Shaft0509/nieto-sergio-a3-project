@@ -2,5 +2,6 @@
 {
     public class Movement
     {
-        public int Gravity = 4;  }
+        public int Gravity = 4;
+    }
 }

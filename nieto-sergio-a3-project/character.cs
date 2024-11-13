@@ -12,3 +12,4 @@ namespace Game10003
         private int velocity = 0; // Controls speed
         private bool isJumping = false; //  check if the character has jumped yet
         private bool gameStarted = false; //  track if the game has started
+

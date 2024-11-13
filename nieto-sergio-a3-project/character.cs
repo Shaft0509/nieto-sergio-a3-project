@@ -43,3 +43,23 @@ namespace Game10003
                 gameStarted = true; //  the game Has started
             }
         }
+
+        public void HandleInput()
+        {
+            if (Input.IsKeyboardKeyDown(KeyboardInput.Space)) // Space key = Jump
+            {
+                if (!gameStarted)
+                {
+                    StartGame(); // Start the game when space bar is pressed
+                }
+                Jump(); // Jump action if game started
+            }
+        }
+
+        public void Update()
+        {
+            HandleInput(); //  jumping input
+            ApplyGravity(); // Apply gravity to the character
+        }
+    }
+}
